@@ -1,0 +1,22 @@
+{
+  "name": "gdsii",
+  "version": "0.1.0",
+  "description": "GDSII file format parser",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite example",
+    "test": "vitest --run"
+  },
+  "keywords": [
+    "vlsi",
+    "gds",
+    "gdsii",
+    "cad"
+  ],
+  "author": "Uri Shaked",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1"
+  }
+}

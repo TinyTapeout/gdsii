@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "baseUrl": "..",
+    "rootDir": "..",
+    "paths": {
+      "gdsii": ["src"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}
