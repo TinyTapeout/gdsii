@@ -14,7 +14,7 @@
     "cad"
   ],
   "author": "Uri Shaked",
-  "license": "MIT",
+  "license": "MIT OR Apache-2.0",
   "devDependencies": {
     "vite": "^5.2.11",
     "vitest": "^1.6.0"
