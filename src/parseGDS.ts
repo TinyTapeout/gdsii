@@ -2,6 +2,7 @@
 // Copyright (C) 2024, Tiny Tapeout LTD
 // Author: Uri Shaked
 
+import { GDSRecord } from './GDSRecord';
 import { RecordType } from './RecordType';
 import { parsers } from './parsers';
 
@@ -22,11 +23,9 @@ export function* parseGDS(bytes: Uint8Array) {
       throw new GDSParseError(`Invalid record length: ${len}`);
     }
     if (tag in parsers) {
-      const result = parsers[tag](dataView, offset, len - 4);
-      yield {
-        type: tag,
-        data: result,
-      };
+      const parser = parsers[tag as keyof typeof parsers];
+      const data = parser(dataView, offset, len - 4);
+      yield { tag, data } as GDSRecord;
     } else {
       throw new GDSParseError(`Unknown record type: ${RecordType[tag]}`);
     }

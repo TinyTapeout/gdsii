@@ -38,6 +38,7 @@ export function parseReal8(dataView: DataView, offset: number) {
   return base * sign * Math.pow(16, exponent);
 }
 
+// @ts-ignore - TextDecoder is missing in the typings (https://github.com/microsoft/TypeScript/issues/31535)
 const textDecoder = new TextDecoder();
 
 export const emptyParser = (dataView: DataView, offset: number, len: number) => {

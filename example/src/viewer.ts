@@ -2,7 +2,7 @@
 // Copyright (C) 2024, Tiny Tapeout LTD
 // Author: Uri Shaked
 
-import { parseGDS, RecordType } from 'gdsii';
+import { parseGDS, RecordType, GDSRecord } from 'gdsii';
 import gdsUrl from '../tt_um_factory_test.gds?url';
 
 const gdsBytes = await fetch(gdsUrl).then((res) => res.arrayBuffer());
@@ -22,7 +22,7 @@ function renderToSVG(rootCell: string, root: SVGElement) {
   let elementType = '';
   let elementText = '';
   let srefName = '';
-  let xy: Array<[number, number]> = [];
+  let xy: GDSRecord.XY['data'] = [];
 
   let currentGroup: SVGGElement | null = null;
 
@@ -30,7 +30,7 @@ function renderToSVG(rootCell: string, root: SVGElement) {
   root.appendChild(defs);
 
   for (const record of parseGDS(new Uint8Array(gdsBytes))) {
-    switch (record.type) {
+    switch (record.tag) {
       case RecordType.BGNSTR:
         currentGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         break;
@@ -49,7 +49,7 @@ function renderToSVG(rootCell: string, root: SVGElement) {
       continue;
     }
 
-    switch (record.type) {
+    switch (record.tag) {
       case RecordType.STRNAME: {
         const name = record.data;
         console.log(record.data);
