@@ -2,6 +2,10 @@
 
 GDSII file format parser for JavaScript.
 
+[![NPM Version](https://img.shields.io/npm/v/gdsii)](https://www.npmjs.com/package/gdsii)
+![License: MIT or Apache-2.0](https://img.shields.io/npm/l/gdsii)
+![Types: TypeScript](https://img.shields.io/npm/types/gdsii)
+
 Copyright (C) 2024, Tiny Tapeout LTD.
 
 ## Usage
