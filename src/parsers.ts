@@ -4,7 +4,7 @@
 
 // Spec: http://bitsavers.informatik.uni-stuttgart.de/pdf/calma/GDS_II_Stream_Format_Manual_6.0_Feb87.pdf
 
-import { RecordType } from './RecordType';
+import { RecordType } from './RecordType.js';
 
 function parseDate(dataView: DataView, offset: number) {
   const year = dataView.getUint16(offset, false);

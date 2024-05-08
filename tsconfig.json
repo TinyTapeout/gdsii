@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "ES2020",
-    "moduleResolution": "node",
+    "module": "NodeNext",
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "removeComments": false,
     "sourceMap": true,
     "declaration": true,
     "noEmitOnError": true,
+    "skipLibCheck": true,
     "rootDir": "src",
     "outDir": "dist/esm",
     "lib": ["ES2020"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
 }

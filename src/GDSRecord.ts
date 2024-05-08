@@ -1,4 +1,4 @@
-import { type RecordType } from './RecordType';
+import { type RecordType } from './RecordType.js';
 
 export namespace GDSRecord {
   export interface Header {

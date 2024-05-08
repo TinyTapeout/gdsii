@@ -2,9 +2,9 @@
 // Copyright (C) 2024, Tiny Tapeout LTD
 // Author: Uri Shaked
 
-import { GDSRecord } from './GDSRecord';
-import { RecordType } from './RecordType';
-import { parsers } from './parsers';
+import { GDSRecord } from './GDSRecord.js';
+import { RecordType } from './RecordType.js';
+import { parsers } from './parsers.js';
 
 export class GDSParseError extends Error {
   constructor(message: string) {

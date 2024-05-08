@@ -2,8 +2,28 @@
   "name": "gdsii",
   "version": "0.1.0",
   "description": "GDSII file format parser",
-  "main": "index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "typings": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
   "scripts": {
+    "build": "rimraf dist && tsc && tsc -p tsconfig.cjs.json",
+    "prepublish": "npm run build",
     "start": "vite example",
     "test": "vitest --run"
   },
@@ -16,6 +36,8 @@
   "author": "Uri Shaked",
   "license": "MIT OR Apache-2.0",
   "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vitest": "^1.6.0"
   }

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
-import { RecordType } from './RecordType';
-import { parseReal8, parsers } from './parsers';
+import { RecordType } from './RecordType.js';
+import { parseReal8, parsers } from './parsers.js';
 
 describe('parsers', () => {
   test('BGNLIB', () => {
